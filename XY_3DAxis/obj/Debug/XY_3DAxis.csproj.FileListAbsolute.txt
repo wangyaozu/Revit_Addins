@@ -15,3 +15,4 @@ E:\Ideas\3DAxis\XY_3DAxis\obj\Debug\XY_3DAxis.AxisForm.resources
 E:\Ideas\3DAxis\XY_3DAxis\obj\Debug\XY_3DAxis.csproj.GenerateResource.Cache
 E:\Ideas\3DAxis\XY_3DAxis\obj\Debug\3DAxis.dll
 E:\Ideas\3DAxis\XY_3DAxis\obj\Debug\3DAxis.pdb
+E:\Ideas\3DAxis\XY_3DAxis\obj\Debug\XY_3DAxis.csprojResolveAssemblyReference.cache

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>特效流</Name>
+		<Assembly>E:\Ideas\3DAxis\XY_3DAxis\bin\Debug\3DAxis.dll</Assembly>
+		<AddInId>24D1DEBA-F573-480A-B710-6D4012D36D07</AddInId>
+		<FullClassName>XY_3DAxis.MainEntry</FullClassName>
+        <VendorId></VendorId>
+        <VendorDescription></VendorDescription>
+	</AddIn>
+</RevitAddIns>

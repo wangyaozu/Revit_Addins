@@ -19,7 +19,9 @@ namespace XY_3DAxis
         public Result OnStartup(UIControlledApplication application)
         {
             var curDllLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            var mainRibbonPanel = application.CreateRibbonPanel("XY_Tools");
+            string productMenuName = "特效流";
+            application.CreateRibbonTab(productMenuName);
+            var mainRibbonPanel = application.CreateRibbonPanel(productMenuName, "工具");
             var itemData = new PushButtonData("SWZW", "三维轴网", curDllLocation, "XY_3DAxis.XY_3DAxisExternalCommand");
             var pushButton = mainRibbonPanel.AddItem(itemData) as PushButton;
             return Result.Succeeded;
