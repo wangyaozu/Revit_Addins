@@ -73,10 +73,11 @@
       <DependentUpon>AxisForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Axis3D\AxisManager.cs" />
-    <Compile Include="Axis3D\Commands.cs" />
+    <Compile Include="Axis3D\AxisCommands.cs" />
     <Compile Include="Axis3D\UtilTool.cs" />
     <Compile Include="MainEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoftwareRender\SoftwareRenderCommands.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Axis3D\AxisForm.resx">
