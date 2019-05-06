@@ -2,7 +2,7 @@
 <RevitAddIns>
 	<AddIn Type="Application">
 		<Name>TXL</Name>
-		<Assembly>E:\Ideas\TXL\Source\bin\Debug\MainEntry.dll</Assembly>
+		<Assembly>E:\Ideas\TXL\Revit_Addins\Source\bin\Debug\MainEntry.dll</Assembly>
 		<AddInId>24D1DEBA-F573-480A-B710-6D4012D36D07</AddInId>
 		<FullClassName>TXL.MainEntry</FullClassName>
         <VendorId>com.xybim.creator</VendorId>
