@@ -22,7 +22,7 @@ namespace TXL
             string productMenuName = "TXL";
             application.CreateRibbonTab(productMenuName);
             var mainRibbonPanel = application.CreateRibbonPanel(productMenuName, "工具");
-            var itemData = new PushButtonData("SWZW", "三维轴网", curDllLocation, "XY_3DAxis.XY_3DAxisExternalCommand");
+            var itemData = new PushButtonData("SWZW", "三维轴网", curDllLocation, "Axis3D.Axis3DExternalCommand");
             var pushButton = mainRibbonPanel.AddItem(itemData) as PushButton;
             return Result.Succeeded;
         }

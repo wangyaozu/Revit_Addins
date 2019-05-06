@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("3DAxis")]
+[assembly: AssemblyTitle("MainEntry")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("3DAxis")]
+[assembly: AssemblyProduct("MainEntry")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("51ca626a-9d36-429b-a258-a763fedf2afc")]
+[assembly: Guid("192e343b-8433-4e1c-b3aa-e722d07181ce")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

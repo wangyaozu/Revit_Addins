@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Axis3D
 {
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
-    public class XY_3DAxisExternalCommand : IExternalCommand
+    public class Axis3DExternalCommand : IExternalCommand
     {
         public Autodesk.Revit.UI.Result Execute(ExternalCommandData revit, ref string message, ElementSet elements)
         {
@@ -17,9 +17,9 @@ namespace Axis3D
             return Autodesk.Revit.UI.Result.Succeeded;
         }
     }
-    public class XY_3DAxisExternalEventHandler : IExternalEventHandler
+    public class Axis3DExternalEventHandler : IExternalEventHandler
     {
-        public static ExternalEvent XY_3DAxisExternalEvent = ExternalEvent.Create(new XY_3DAxisExternalEventHandler());
+        public static ExternalEvent Axis3DExternalEvent = ExternalEvent.Create(new Axis3DExternalEventHandler());
 
         public void Execute(UIApplication app)
         {
@@ -28,7 +28,7 @@ namespace Axis3D
 
         public string GetName()
         {
-            return "XY_3DAxisExternalEventHandler";
+            return "Axis3DExternalEventHandler";
         }
     }
 }
