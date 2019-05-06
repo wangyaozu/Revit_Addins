@@ -1,4 +1,4 @@
-﻿namespace XY_3DAxis
+﻿namespace Axis3D
 {
     partial class AxisForm
     {

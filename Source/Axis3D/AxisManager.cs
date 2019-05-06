@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Autodesk.Revit.UI;
 using System.IO;
 
-namespace XY_3DAxis
+namespace Axis3D
 {
     public class AxisManager
     {

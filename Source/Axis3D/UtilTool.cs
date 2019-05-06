@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XY_3DAxis
+namespace Axis3D
 {
     class UtilTool
     {
