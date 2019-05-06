@@ -1,4 +1,4 @@
-﻿namespace MainEntry.Axis3D
+﻿namespace TXL.Axis3D
 {
     partial class AxisForm
     {

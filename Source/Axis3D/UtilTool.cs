@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainEntry.Axis3D
+namespace TXL.Axis3D
 {
     class UtilTool
     {

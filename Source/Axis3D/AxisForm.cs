@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace MainEntry.Axis3D
+namespace TXL.Axis3D
 {
     public partial class AxisForm : System.Windows.Forms.Form
     {

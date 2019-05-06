@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainEntry.SoftwareRender
+namespace TXL.SoftwareRender
 {
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     public class SoftwareRenderExternalCommand : IExternalCommand
