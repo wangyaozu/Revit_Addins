@@ -78,6 +78,7 @@
     <Compile Include="MainEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoftwareRender\SoftwareRenderCommands.cs" />
+    <Compile Include="SoftwareRender\ViewProcess.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Axis3D\AxisForm.resx">
