@@ -3,6 +3,7 @@ using Autodesk.Revit.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,11 @@ namespace TXL.Axis3D
 {
     class UtilTool
     {
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+        [DllImport("user32", CharSet = CharSet.Auto)]
+        public static extern uint GetWindowLong(IntPtr hwnd, int nIndex);
+
         public static void ShowFormModeless(System.Windows.Forms.Form form)
         {
             if (form == null)

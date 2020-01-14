@@ -40,8 +40,6 @@
             this.Name = "AxisForm";
             this.ShowInTaskbar = false;
             this.Text = "AxisForm";
-            this.TransparencyKey = System.Drawing.SystemColors.Control;
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AxisForm_Paint);
             this.ResumeLayout(false);
 
         }

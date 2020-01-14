@@ -5,6 +5,7 @@
 		<Assembly>E:\Ideas\TXL\Revit_Addins\Source\bin\Debug\MainEntry.dll</Assembly>
 		<AddInId>24D1DEBA-F573-480A-B710-6D4012D36D07</AddInId>
 		<FullClassName>TXL.MainEntry</FullClassName>
+		<SuppressedWarning>UncaughtException</SuppressedWarning>
         <VendorId>com.xybim.creator</VendorId>
         <VendorDescription>XY</VendorDescription>
 	</AddIn>

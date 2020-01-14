@@ -49,8 +49,8 @@ namespace TXL.Axis3D
         {
             if (AxisDialog == null)
             {
-                AxisDialog = new AxisForm(uiapp);
-                UtilTool.ShowFormModeless(AxisDialog);
+                 AxisDialog = new AxisForm(uiapp);
+                 UtilTool.ShowFormModeless(AxisDialog);
             }
             //启动定时刷新
             InitRefreshTimer();
@@ -74,7 +74,7 @@ namespace TXL.Axis3D
         {
             ReleaseTimer();
             RefreshTimer = new System.Windows.Forms.Timer();
-            RefreshTimer.Interval = 10;
+            RefreshTimer.Interval = 1;
             RefreshTimer.Tick += RefreshTimer_Tick;
             RefreshTimer.Start();
         }

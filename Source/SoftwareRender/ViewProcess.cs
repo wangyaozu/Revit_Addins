@@ -1,4 +1,5 @@
 ﻿using Autodesk.Revit.UI;
+using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,10 @@ namespace TXL.SoftwareRender
         }
         public void Run()
         {
-            System.Windows.Forms.MessageBox.Show("ViewProcess");
+            var select = m_Uiapp.ActiveUIDocument.Selection;
+            var pickedBox = select.PickBox(PickBoxStyle.Crossing, "PickBoxStyle");
+            var elements = select.PickElementsByRectangle();
+            System.Windows.Forms.MessageBox.Show("ViewProcess: " + elements.Count);
         }
     }
 }

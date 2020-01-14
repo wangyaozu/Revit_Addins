@@ -30,6 +30,10 @@ namespace TXL
                 var itemData = new PushButtonData("SR", "透视视图", curDllLocation, "TXL.SoftwareRender.SoftwareRenderExternalCommand");
                 var pushButton = mainRibbonPanel.AddItem(itemData) as PushButton;
             }
+            {
+                var itemData = new PushButtonData("PI", "Python", curDllLocation, "TXL.PyInteractionCommands");
+                var pushButton = mainRibbonPanel.AddItem(itemData) as PushButton;
+            }
             return Result.Succeeded;
         }
     }

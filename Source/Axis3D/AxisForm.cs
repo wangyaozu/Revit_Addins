@@ -16,6 +16,8 @@ namespace TXL.Axis3D
     public partial class AxisForm : System.Windows.Forms.Form
     {
         private UIApplication Uiapp { get; set; }
+        private Autodesk.Revit.DB.View3D m_View3D { get; set; }
+        private List<Autodesk.Revit.DB.Grid> ValidGrid { get; set; }
         private SolidBrush m_SolidBrush { get; set; }
         private Pen m_LinePen { get; set; }
         private List<LocalGrid> ShowedGrids { get; set; }
@@ -25,6 +27,16 @@ namespace TXL.Axis3D
         public AxisForm(UIApplication uiapp)
         {
             InitializeComponent();
+
+            this.TopMost = true;
+            this.TransparencyKey = this.BackColor;
+            this.ShowInTaskbar = false;
+
+            uint num = UtilTool.GetWindowLong(base.Handle, -20);//GWL_EXSTYLE
+            num |= 32u;//WS_EX_TRANSPARENT
+            num |= 524288u;//WS_EX_LAYERED
+            UtilTool.SetWindowLong(base.Handle, -20, (IntPtr)((long)((ulong)num)));
+
             m_SolidBrush = new SolidBrush(Color.Black);
             m_LinePen = new Pen(Color.Black, 1.5f);
             GridLock = new Object();
@@ -33,14 +45,28 @@ namespace TXL.Axis3D
 
             Uiapp = uiapp;
             ShowedGrids = new List<LocalGrid>();
-            CanPenetrate();
+            ValidGrid = new List<Autodesk.Revit.DB.Grid>();
+
+            this.Paint += AxisForm_Paint;
         }
+
         public void UpdateForm()
         {
             var view3D = Uiapp.ActiveUIDocument.ActiveView as Autodesk.Revit.DB.View3D;
             var uiView = UtilTool.GetActiveUIView(Uiapp);
-            var allGrids = UtilTool.GetAllGrids(Uiapp);
-            if (uiView != null && view3D != null && allGrids.Count > 0)
+            if ((m_View3D == null || m_View3D.Id.IntegerValue !=view3D.Id.IntegerValue) && view3D != null)
+            {
+                m_View3D = view3D;
+                if (view3D == null)
+                {
+                    ValidGrid.Clear();
+                }
+                else
+                {
+                    ValidGrid = UtilTool.GetAllGrids(Uiapp);
+                }
+            }
+            if (uiView != null && view3D != null && ValidGrid.Count > 0)
             {
                 var corners = uiView.GetZoomCorners().ToList();
                 var isEnter = true;
@@ -66,7 +92,7 @@ namespace TXL.Axis3D
                     UpdateWindowsPositionAndSize(viewRect);
                     lock (GridLock)
                     {
-                        ShowedGrids = UtilTool.GetLocalGrids(allGrids, view3D, corners, viewRect);
+                        ShowedGrids = UtilTool.GetLocalGrids(ValidGrid, view3D, corners, viewRect);
                     }
                     this.Refresh();
                 }
@@ -113,21 +139,6 @@ namespace TXL.Axis3D
                     }
                 }
             }
-        }
-        private const uint WS_EX_LAYERED = 0x80000;
-        private const int WS_EX_TRANSPARENT = 0x20;
-        private const int GWL_STYLE = (-16);
-        private const int GWL_EXSTYLE = (-20);
-        private const int LWA_ALPHA = 0x2;
-        //设置透明度
-        [DllImport("user32", EntryPoint = "SetWindowLong")]
-        private static extern uint SetWindowLong(IntPtr hwnd,int nIndex,uint dwNewLong);
-        /// <summary>
-        ///使窗口有鼠标穿透功能
-        /// </summary>
-        public void CanPenetrate()
-        {
-            uint oldGWLEx = SetWindowLong(this.Handle, GWL_EXSTYLE, WS_EX_TRANSPARENT | WS_EX_LAYERED);
         }
     }
 
